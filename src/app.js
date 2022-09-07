@@ -25,42 +25,42 @@ app.use((req, res, next) => {
 app.use(tiConnected)
 
 
-app.post("/number-email", (req, res) => {
+// app.post("/number-email", (req, res) => {
 
-    const { emailTo, title, domain, number, email, messagem } = req.body
+//     const { emailTo, title, domain, number, email, messagem } = req.body
 
-    ejs.renderFile(__dirname + "/template/email-number.ejs", { domain: domain, number: number, email: email, messagem: messagem }, function (err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            let transporter = nodemailer.createTransport({
-                host: "smtp.hostinger.com",
-                port: 465,
-                ssl: true,
-                tls: true,
-                auth: {
-                    user: process.env.USERNAME,
-                    pass: process.env.PASSWORD,
-                }
-            });
+//     ejs.renderFile(__dirname + "/template/email-number.ejs", { domain: domain, number: number, email: email, messagem: messagem }, function (err, data) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             let transporter = nodemailer.createTransport({
+//                 host: "smtp.hostinger.com",
+//                 port: 465,
+//                 ssl: true,
+//                 tls: true,
+//                 auth: {
+//                     user: process.env.USERNAME,
+//                     pass: process.env.PASSWORD,
+//                 }
+//             });
 
-            var mainOptions = {
-                from: 'formulario@isaquesestudios.com',
-                to: emailTo,
-                subject: title,
-                html: data
-            };
-            transporter.sendMail(mainOptions, function (err, info) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('Message sent: ' + info.response);
-                }
-            });
-        }
-    });
-    res.send("enviou");
-});
+//             var mainOptions = {
+//                 from: 'formulario@isaquesestudios.com',
+//                 to: emailTo,
+//                 subject: title,
+//                 html: data
+//             };
+//             transporter.sendMail(mainOptions, function (err, info) {
+//                 if (err) {
+//                     console.log(err);
+//                 } else {
+//                     console.log('Message sent: ' + info.response);
+//                 }
+//             });
+//         }
+//     });
+//     res.send("enviou");
+// });
 
 app.post("/ticonnected", (req, res) => {
 
