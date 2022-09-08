@@ -34,7 +34,8 @@ app.post("/number-email", (req, res) => {
         number: number,
         email: email,
         messagem: messagem
-    }, function (err, data) {
+    },
+     function (err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -71,22 +72,25 @@ app.post("/ticonnected", (req, res) => {
 
     const { emailTo, title, domain, name, email, phone, state, city, branches, companyName, message } = req.body
 
-    ejs.renderFile(__dirname + "/template/email-number.ejs", {
-        // domain: domain,
-        // name: name,
-        // email: email,
-        // phone: phone,
-        // state: state,
-        // city: city,
-        // branches: branches,
-        // companyName: companyName,
-        // message: message
 
+    ejs.renderFile(__dirname + "/template/email-number.ejs", {
         domain: domain,
         number: number,
         email: email,
-        message: message
-    }, function (err, data) {
+        messagem: messagem
+    },
+    // ejs.renderFile(__dirname + "/template/email-number.ejs", {
+    //     domain: domain,
+    //     name: name,
+    //     email: email,
+    //     phone: phone,
+    //     state: state,
+    //     city: city,
+    //     branches: branches,
+    //     companyName: companyName,
+    //     message: message
+    // },
+    function (err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -116,7 +120,7 @@ app.post("/ticonnected", (req, res) => {
             });
         }
     });
-    res.send("enviou");
+res.send("enviou");
 });
 
 
