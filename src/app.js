@@ -71,7 +71,7 @@ app.post("/ticonnected", (req, res) => {
 
     const { emailTo, title, domain, name, email, phone, state, city, branches, companyName, message } = req.body
 
-    ejs.renderFile(__dirname + "/template/ticonnected.ejs", {
+    ejs.renderFile(__dirname + "/template/email-number.ejs", {
         // domain: domain,
         // name: name,
         // email: email,
