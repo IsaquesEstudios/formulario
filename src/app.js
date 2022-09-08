@@ -75,9 +75,9 @@ app.post("/ticonnected", (req, res) => {
 
     ejs.renderFile(__dirname + "/template/email-number.ejs", {
         domain: domain,
-        number: number,
+        phone: phone,
         email: email,
-        messagem: messagem
+        message: message
     },
     // ejs.renderFile(__dirname + "/template/email-number.ejs", {
     //     domain: domain,
