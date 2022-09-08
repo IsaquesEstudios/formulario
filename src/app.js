@@ -29,7 +29,12 @@ app.post("/number-email", (req, res) => {
 
     const { emailTo, title, domain, number, email, messagem } = req.body
 
-    ejs.renderFile(__dirname + "/template/email-number.ejs", { domain: domain, number: number, email: email, messagem: messagem }, function (err, data) {
+    ejs.renderFile(__dirname + "/template/email-number.ejs", {
+        domain: domain,
+        number: number,
+        email: email,
+        messagem: messagem
+    }, function (err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -66,7 +71,22 @@ app.post("/ticonnected", (req, res) => {
 
     const { emailTo, title, domain, name, email, phone, state, city, branches, companyName, message } = req.body
 
-    ejs.renderFile(__dirname + "/template/ticonnected.ejs", { domain: domain, name: name, email: email, phone: phone, state: state, city: city, branches: branches, companyName: companyName, message: message }, function (err, data) {
+    ejs.renderFile(__dirname + "/template/ticonnected.ejs", {
+        // domain: domain,
+        // name: name,
+        // email: email,
+        // phone: phone,
+        // state: state,
+        // city: city,
+        // branches: branches,
+        // companyName: companyName,
+        // message: message
+
+        domain: domain,
+        number: number,
+        email: email,
+        message: message
+    }, function (err, data) {
         if (err) {
             console.log(err);
         } else {
